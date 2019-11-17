@@ -1,4 +1,4 @@
-const PortFinder = require('../portFinder');
+const PortFinder = require('..');
 const es = require('event-stream');
 
 const SYNCPATTERN = [0x5a, 0xa5, 0x5a, 0xa5];

@@ -1,21 +1,14 @@
-# portArbitor
+# portFinder
 
 ```javascript
 
-// singleton class that manages serial ports
-
-class Master {
-    register(client) {
-        // register client in list of clients that are looking for a port
-        // returns a promise that resolves when a match is made with the opened port 
-    }
-    disconnect(client) {
-        // 
-    }
-}
-
-
 class PortFinder extends EventEmitter {
+    constructor(options) {
+        // options: {
+        //      name: <string>
+        //      parser: <transform stream to process incoming data>
+        }
+    }
     onData(data) {
         // receive data
     }
@@ -29,19 +22,20 @@ class PortFinder extends EventEmitter {
         // use port to validate if this is my port
         // returns promise that resolves to true or false
     }
-    send(data) {
+    write(data) {
+        // send data
 
     }
 }
 ```
 
-PortFinder -> PortMaster, connect(me, options)
+## PortFinder events
 
-PortMaster
-    for each port
-        for each client
-            client.connect(port)
-            client.validate()
-                if ok
-                    next port
+```on('connected', <port path>)``` - issued after port is validated
+
+```on('disconnected')``` - issued when a connection is lost
+
+```on('data', data)``` - data received.  Output of parser if specified
+
+```on('error', error)```  - oopsies
             
