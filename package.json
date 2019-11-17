@@ -1,0 +1,19 @@
+{
+  "name": "portfinder",
+  "version": "1.0.0",
+  "description": "Easy way to manage devices connected to serial poerts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async-promise-wrapper": "^1.1.1",
+    "event-stream": "^4.0.1",
+    "serialport": "^8.0.5"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0"
+  }
+}
