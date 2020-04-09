@@ -17,12 +17,11 @@ class PortFinder extends EventEmitter {
     }
 
     onError(error) {
-        console.log(`client ${this.name} error ${error}`);
-        this.emit('error', error);
+        console.log(`client ${this.name} error ${JSON.stringify(error)}`);
+        //this.emit('error', error);
     }
 
     validate() {
-        this.emit('connected', this.port.path);
         return Promise.resolve(true);
     }
 
@@ -35,6 +34,14 @@ class PortFinder extends EventEmitter {
                 reject(new Error(`writing to closed serial port: ${buf}`));
             }
         });
+    }
+
+    // eslint-disable-next-line no-unused-vars
+    onConnected(path) {
+    }
+
+    onDisconnected() {
+
     }
 }
 

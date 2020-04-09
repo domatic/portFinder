@@ -1,5 +1,5 @@
 {
-  "name": "portfinder",
+  "name": "port-finder",
   "version": "1.0.0",
   "description": "Easy way to manage devices connected to serial poerts",
   "main": "index.js",

@@ -29,6 +29,14 @@ class Panel extends PortFinder {
         }
     }
 
+    connected(path) {
+        console.log(`${this.name}: connected ${path}`);
+    }
+
+    disconnected() {
+        console.log(`${this.name}: disconnected`);
+    }
+
     _getInfo() {
         return new Promise((resolve, reject) => {
             let _timer = setTimeout(() => {
